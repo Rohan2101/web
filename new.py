@@ -3,6 +3,7 @@ from bokeh.models import ColumnDataSource
 from bokeh.transform import factor_cmap
 from bokeh.palettes import Category10
 from bokeh.io import output_notebook
+from bokeh.io import output_file
 import pandas as pd
 
 df = pd.read_excel("aihw-can-122-CDiA-2023-Book-1a-Cancer-incidence-age-standardised-rates-5-year-age-groups.xlsx",sheet_name=1,header=5)
@@ -63,5 +64,5 @@ p.legend.location = "top_left"
 p.legend.orientation = "horizontal"
 
 # Show the plot
-output_notebook()
+output_file('hist.html')
 show(p)
